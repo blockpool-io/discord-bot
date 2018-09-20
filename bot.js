@@ -27,7 +27,7 @@ fs.readdir('./commands/', (err, files) => {
 client.elevation = message => {
   let permlvl = 0;
 
-  const config_role = message.guild.roles.find('name', config.modrolename);
+  const mod_role = message.guild.roles.find('name', config.modrolename);
 
   if (mod_role && message.member.roles.has(mod_role.id)) {
     permlvl = 1;
