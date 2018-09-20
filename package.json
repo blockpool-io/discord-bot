@@ -1,0 +1,17 @@
+{
+  "name": "bpl-discord-bot",
+  "version": "0.0.1",
+  "description": "Bot for the Blockpool Discord",
+  "main": "bot.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [],
+  "author": "dated",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.0",
+    "moment": "^2.20.1",
+    "node-fetch": "^2.2.0"
+  }
+}
