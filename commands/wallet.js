@@ -1,16 +1,15 @@
+const fetch = require("node-fetch");
+
 exports.run = (client, config, message) => {
   message.delete().catch(err => console.log(err));
 
   if (config.wallet) {
-    fetch(`https://api.github.com/${config.wallet.gh_username}/${config.wallet.gh_reponame}/releases/latest`)
+    fetch(`https://api.github.com/repos/${config.wallet.gh_username}/${config.wallet.gh_reponame}/releases/latest`)
       .then(response => response.json())
       .then(release => {
-        console.log(release.html_url)
-        console.log(release.name)
-
         message.channel.send({embed: {
           color: 3977445,
-          title: `Download the latest wallet (${release.name}) here:`,
+          title: `Download the latest wallet (v${release.tag_name}) here:`,
           description: release.html_url
         }});
       })
