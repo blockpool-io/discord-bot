@@ -26,17 +26,17 @@
   "token": "YOUR_BOT_TOKEN",
   "cmd_prefix": "?",
   "wallet": {
-    "url": "WALLET_URL",
-    "version": "WALLET_VERSION"
+    "gh_username": "GITHUB_USERNAME",
+    "gh_reponame": "GITHUB_REPOSITORY_NAME"
   },
   "snapshots": {
     "mainnet": "MAINNET_SNAPSHOT_URL",
     "testnet": "TESTNET_SNAPSHOT_URL"
   },
-  "adminrolename": "Admin",
-  "modrolename": "Mod",
-  "configrolename": "Bot Admin"
- }
+  "adminrolename": "ADMIN_ROLE",
+  "modrolename": "MODERATOR_ROLE",
+  "configrolename": "BOT_ADMIN_ROLE"
+}
 ```
 
 start the bot by typing `node bot.js` or with forever by typing `forever start bot.js`
