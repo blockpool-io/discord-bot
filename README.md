@@ -1,18 +1,20 @@
 # BPL Discord Bot
 
-This small discord bot allows to set and show URLs for the wallet and bootstraps. nodejs required.
+<p align="center">
+    <img src="./banner.png" />
+</p>
 
-## How to set the snapshot URLs
-
-```
-?setsnapshot <url> <mainnet|testnet>
-```
+[![License: MIT](https://badgen.now.sh/badge/license/MIT)](https://opensource.org/licenses/MIT)
 
 ## Commands 
 
 ```
 ?wallet // Displays the latest wallet URL
 ?snapshots // Displays the snapshot URLs
+
+?setsnapshot <url> <mainnet|testnet> // Setter for the snapshot URLs
+
+?say <text> // Sends <text> through the bot
 ```
 
 ## Configuration
@@ -37,4 +39,11 @@ This small discord bot allows to set and show URLs for the wallet and bootstraps
  }
 ```
 
-start the bot by typing `node bot.js`
+start the bot by typing `node bot.js` or with forever by typing `forever start bot.js`
+
+## Authors
+- [Edgar Goetzendorff](https://github.com/dated)
+- [All Contributors](../../contributors)
+
+## License
+[MIT](LICENSE) © [Blockpool](https://blockpool.io)
