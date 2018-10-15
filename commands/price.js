@@ -11,7 +11,7 @@ exports.run = (client, config, message, params) => {
       message.channel.send({
         embed: {
           color: 3977445,
-          title: `Latest ${data.Data.Name} price from CryptoCompare:`,
+          title: `Latest ${data.Data.CoinInfo.Name} price from CryptoCompare:`,
           fields: [{
             name: "Price (BTC)",
             value: data.Data.AggregatedData.PRICE.toString()
