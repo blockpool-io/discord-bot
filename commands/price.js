@@ -1,6 +1,12 @@
 const fetch = require("node-fetch");
 
 exports.run = (client, config, message, params) => {
+  if (message.channel.id !== config.price_channel.id) {
+    message.author.send(`The \`price\` command works only in the following channel: #${config.price_channel.name}`);
+    message.delete().catch(err => console.log(err));
+    return;
+  }
+
   if (params.length < 1) return;
   
   const ticker = params[0].toUpperCase();
