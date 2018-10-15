@@ -17,7 +17,11 @@ exports.run = (client, config, message, params) => {
       message.channel.send({
         embed: {
           color: 3977445,
-          title: `Latest ${data.Data.CoinInfo.FullName} price from CryptoCompare:`,
+          author: {
+            name: `${data.Data.CoinInfo.FullName} price from CryptoCompare:`,
+            icon_url: `https://cryptocompare.com${data.Data.CoinInfo.ImageUrl}`,
+            url: `https://cryptocompare.com${data.Data.CoinInfo.Url}`
+          },
           fields: [{
             name: "Price (BTC)",
             value: Number(data.Data.AggregatedData.PRICE).toFixed(8).toString()
