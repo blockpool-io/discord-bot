@@ -9,6 +9,10 @@
     "mainnet": "MAINNET_SNAPSHOT_URL",
     "testnet": "TESTNET_SNAPSHOT_URL"
   },
+  "price_channel": {
+    "name": "CHANNEL_NAME",
+    "id": "CHANNEL_ID"
+  },
   "adminrolename": "ADMIN_ROLE",
   "modrolename": "MODERATOR_ROLE",
   "configrolename": "BOT_ADMIN_ROLE"
