@@ -10,11 +10,14 @@
 
 ```
 ?wallet // Displays the latest wallet URL
+
 ?snapshots // Displays the snapshot URLs
 
 ?setsnapshot <url> <mainnet|testnet> // Setter for the snapshot URLs
 
 ?say <text> // Sends <text> through the bot
+
+?price <ticker> // Gets market info from CryptoCompare
 ```
 
 ## Configuration
@@ -32,6 +35,10 @@
   "snapshots": {
     "mainnet": "MAINNET_SNAPSHOT_URL",
     "testnet": "TESTNET_SNAPSHOT_URL"
+  },
+  "price_channel": {
+    "name": "CHANNEL_NAME",
+    "id": "CHANNEL_ID"
   },
   "adminrolename": "ADMIN_ROLE",
   "modrolename": "MODERATOR_ROLE",
