@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 exports.run = (client, config, message, params) => {
   if (params.length < 1) return;
   
-  const ticker = params[0]
+  const ticker = params[0].toUpperCase();
 
   fetch(`https://min-api.cryptocompare.com/data/top/exchanges/full?fsym=${ticker}&tsym=BTC`)
     .then(response => response.json())
