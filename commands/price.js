@@ -14,7 +14,7 @@ exports.run = (client, config, message, params) => {
           title: `Latest ${data.Data.CoinInfo.Name} price from CryptoCompare:`,
           fields: [{
             name: "Price (BTC)",
-            value: data.Data.AggregatedData.PRICE.toString()
+            value: Number(data.Data.AggregatedData.PRICE).toFixed(8).toString()
           },
           {
             name: "Volume (24h)",
