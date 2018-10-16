@@ -6,10 +6,8 @@ exports.run = (client, config, message, params) => {
     message.delete().catch(err => console.log(err));
     return;
   }
-
-  if (params.length < 1) return;
   
-  const ticker = params[0].toUpperCase();
+  const ticker = params.length ? params[0].toUpperCase() : 'BPL';
 
   fetch(`https://min-api.cryptocompare.com/data/top/exchanges/full?fsym=${ticker}&tsym=BTC`)
     .then(response => response.json())
