@@ -22,15 +22,15 @@ exports.run = (client, config, message, params) => {
           },
           fields: [{
             name: "Price (BTC)",
-            value: Number(data.Data.AggregatedData.PRICE).toFixed(8).toString()
+            value: Number(data.Data.AggregatedData.PRICE).toFixed(8)
           },
           {
             name: "Volume (24h)",
-            value: data.Data.AggregatedData.VOLUME24HOUR.toString()
+            value: data.Data.AggregatedData.VOLUME24HOUR.toFixed(8)
           },
           {
             name: "Volume (24h - BTC)",
-            value: data.Data.AggregatedData.VOLUME24HOURTO.toFixed(8).toString()
+            value: data.Data.AggregatedData.VOLUME24HOURTO.toFixed(8)
           },
           {
             name: "Percent Change (24h)",
