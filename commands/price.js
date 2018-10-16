@@ -29,6 +29,10 @@ exports.run = (client, config, message, params) => {
             value: data.Data.AggregatedData.VOLUME24HOUR.toString()
           },
           {
+            name: "Volume (24h - BTC)",
+            value: data.Data.AggregatedData.VOLUME24HOURTO.toFixed(8).toString()
+          },
+          {
             name: "Percent Change (24h)",
             value: `${Number(data.Data.AggregatedData.CHANGEPCT24HOUR).toFixed(2)}%`
           }]
