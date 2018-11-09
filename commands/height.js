@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 exports.run = (client, config, message, params) => {
-  fetch(`https://s01.mc.blockpool.io/api/getHeight`)
+  fetch(`http://s01.mc.blockpool.io:9030/api/blocks/getHeight`)
     .then(response => response.json())
     .then(data => {
       const height = data.height
