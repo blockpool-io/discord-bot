@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
-const command = require('../util/channelCommand')
 
-exports.run = command('height', (client, config, message, params) => {
+exports.run = (client, config, message, params) => {
   fetch(`https://s01.mc.blockpool.io/api/getHeight`)
     .then(response => response.json())
     .then(data => {
@@ -9,7 +8,7 @@ exports.run = command('height', (client, config, message, params) => {
       message.channel.send(`Current block height is ${height}`);
     })
     .catch(error => console.error(error))
-});
+};
 
 exports.conf = {
   'permlvl': 0
