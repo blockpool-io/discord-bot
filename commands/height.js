@@ -2,11 +2,11 @@ const fetch = require('node-fetch');
 const command = require('../util/channelCommand')
 
 exports.run = command('height', (client, config, message, params) => {
-  fetch(`http://13.56.163.57:9031/api/getLastBlocks`)
+  fetch(`https://s01.mc.blockpool.io/api/getHeight`)
     .then(response => response.json())
     .then(data => {
-      const latestBlock = data.blocks[0]
-      message.channel.send(`Current block height is ${latestBlock.height}`);
+      const height = data.height
+      message.channel.send(`Current block height is ${height}`);
     })
     .catch(error => console.error(error))
 });
