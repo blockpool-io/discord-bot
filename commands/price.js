@@ -1,12 +1,7 @@
 const fetch = require("node-fetch");
+const command = require('../util/channelCommand')
 
-exports.run = (client, config, message, params) => {
-  if (message.channel.id !== config.price_channel.id) {
-    message.author.send(`The \`price\` command works only in the following channel: #${config.price_channel.name}`);
-    message.delete().catch(err => console.log(err));
-    return;
-  }
-  
+exports.run = command('price', (client, config, message, params) => {
   const ticker = params.length ? params[0].toUpperCase() : 'BPL';
 
   fetch(`https://min-api.cryptocompare.com/data/top/exchanges/full?fsym=${ticker}&tsym=BTC`)
@@ -40,7 +35,7 @@ exports.run = (client, config, message, params) => {
       });
     })
     .catch(error => console.error(error))
-};
+});
 
 exports.conf = {
   "permlvl": 0

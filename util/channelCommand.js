@@ -1,14 +1,16 @@
-exports = (name, fn) => (client, config, message, params) => {
-  if (message.channel.id !== config.price_channel.id) {
-    const allowedChannelConfig = config[`${name}_channel`];
-    const allowedChannels = Array.isArray(allowedChannelConfig) ? allowedChannelConfig : [allowedChannelConfig];
-    const plural = acceptedChannels.length > 1 ? 's' : '';
-    const allowedChannelText = allowedChannels.map(c => `#${c.name}`).join(', ');
-    message.author.send(`The "${name}" command works only in the following channel${plural}: ${allowedChannelText}`);
+module.exports = (name, fn) => (client, config, message, params) => {
+  const allowedChannels = config[`${name}_channels`];
+
+  const allowedChannelIDs = allowedChannels.map(c => c.id);
+  const allowedChannelNames = allowedChannels.map(c => c.name);
+
+  if (allowedChannelIDs.indexOf(message.channel.id) == -1) {
+    const plural = allowedChannelNames.length > 1 ? 's' : '';
+    const names = allowedChannelNames.map(name => `#${name}`).join(', ');
+    message.author.send(`The "${name}" command works only in the following channel${plural}: ${names}`);
     message.delete().catch(err => console.log(err));
     return;
   }
 
   return fn(client, config, message, params);
 }
-   
