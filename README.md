@@ -18,6 +18,8 @@
 ?say <text> // Sends <text> through the bot
 
 ?price <ticker> // Gets market info from CryptoCompare
+
+?height // Displays the current BPL block height
 ```
 
 ## Configuration
